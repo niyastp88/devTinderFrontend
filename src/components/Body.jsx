@@ -14,12 +14,11 @@ const Body = () => {
   const fetchUser = async () => {
     if(userData) return
     try {
-      console.log("me is working")
       const res = await axios.get(BASE_URL + "/profile/view", {
         withCredentials: true,
       });
       disPatch(addUser(res.data))
-      console.log(userData)
+    
     } catch (error) {
       if(error.status===401){
         navigate("/login")
