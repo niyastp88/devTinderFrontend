@@ -40,7 +40,7 @@ const Connections = () => {
                 {firstName + " " + lastName}
               </h2>
               
-              {age && gender && <P>{age+ ", "+gender}</P>}
+              {age && gender && <p>{age+ ", "+gender}</p>}
               <p>{about}</p>
             </div>
           </div>

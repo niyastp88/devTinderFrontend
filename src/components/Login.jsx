@@ -8,7 +8,7 @@ import { BASE_URL } from "../utils/constants";
 const Login = () => {
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
-  const [error,setError]=useState("")
+  const [error, setError] = useState("");
   const disPatch = useDispatch();
   const navigate = useNavigate();
 
@@ -22,18 +22,19 @@ const Login = () => {
         },
         { withCredentials: true }
       );
-
       disPatch(addUser(result.data));
-      navigate("/");
+      setTimeout(() => {
+        navigate("/");
+      }, 200);
     } catch (error) {
-      setError(error?.response?.data || "something went wrong")
+      setError(error?.response?.data || "something went wrong");
       console.error(error);
     }
   };
 
   return (
     <div className="flex justify-center my-10">
-      <div className="card bg-base-100 w-96 shadow-sm">
+      <div className="card bg-base-300 w-96 shadow-sm">
         <div className="card-body">
           <h2 className="card-title justify-center">Login</h2>
           <div>
