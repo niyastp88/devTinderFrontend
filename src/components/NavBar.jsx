@@ -31,11 +31,7 @@ const NavBar = () => {
             DevTinder
           </Link>
         </div>
-        <div className="flex-1">
-          <Link to="/login" className="btn btn-ghost text-xl">
-            Login
-          </Link>
-        </div>
+        
         {user && (
           <div className="flex gap-2">
             <div className="form-control">Welcome, {user.firstName}</div>
