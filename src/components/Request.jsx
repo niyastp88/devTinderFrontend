@@ -7,7 +7,6 @@ import { addRequests, removeRequest } from "../utils/requestSlice";
 const Requests = () => {
   const dispatch = useDispatch();
   const requests = useSelector((store) => store.request);
-  console.log(requests);
 
   const reviewRequest = async (status, _id) => {
     try {
@@ -28,7 +27,6 @@ const Requests = () => {
         withCredentials: true,
       });
       dispatch(addRequests(requests.data.data));
-      
     } catch (error) {
       console.log(error);
     }
@@ -55,7 +53,7 @@ const Requests = () => {
       {requests.map((request) => {
         const { _id, firstName, lastName, photoUrl, age, gender, about } =
           request.fromUserId;
-          console.log(photoUrl)
+        console.log(photoUrl);
 
         return (
           <div

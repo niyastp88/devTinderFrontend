@@ -7,8 +7,8 @@ import { removeUser } from "../utils/userSlice";
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
-  const disPatch=useDispatch()
-  const navigate=useNavigate()
+  const disPatch = useDispatch();
+  const navigate = useNavigate();
   const handleLogout = async () => {
     try {
       await axios.post(
@@ -18,20 +18,24 @@ const NavBar = () => {
           withCredentials: true,
         }
       );
-      disPatch(removeUser())
-      
-      return navigate("/login")
+      disPatch(removeUser());
+
+      return navigate("/login");
     } catch (error) {}
   };
   return (
     <>
       <div className="navbar bg-base-300 shadow-sm">
         <div className="flex-1">
-          <Link to="/" className="btn btn-ghost text-xl">
-            DevTinder
-          </Link>
+          {user ? (
+            <Link to="/" className="btn btn-ghost text-xl">
+              DevTinder
+            </Link>
+          ) : (
+            <h2 className="btn btn-ghost text-xl">Devtinder</h2>
+          )}
         </div>
-        
+
         {user && (
           <div className="flex gap-2">
             <div className="form-control">Welcome, {user.firstName}</div>

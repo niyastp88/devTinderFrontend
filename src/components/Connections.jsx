@@ -39,8 +39,8 @@ const Connections = () => {
               <h2 className="font-bold text-xl">
                 {firstName + " " + lastName}
               </h2>
-              
-              {age && gender && <p>{age+ ", "+gender}</p>}
+
+              {age && gender && <p>{age + ", " + gender}</p>}
               <p>{about}</p>
             </div>
           </div>
