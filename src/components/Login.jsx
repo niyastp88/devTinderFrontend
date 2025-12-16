@@ -30,6 +30,8 @@ const Login = () => {
         navigate("/");
       }, 200);
     } catch (error) {
+      setEmailId("")
+      setPassword("")
       setError(error?.response?.data || "something went wrong");
       console.error(error);
     }
